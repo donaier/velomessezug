@@ -1,13 +1,16 @@
 CKEDITOR.editorConfig = (config) ->
   config.language = "de"
-  config.removeButtons = "Anchor,Underline,Strike,Subscript,Superscript"
   config.format_tags = "p;h1;h2;h3;h4;pre"
-  config.toolbar = [["Format"],
-                    ["Bold", "Italic", "Underline", "Strike", "-", "Subscript", "Superscript"],
-                    ["Table", "HorizontalRule", "SpecialChar"], ["Link", "Unlink"],
-                    ["Undo", "Redo", "-", "RemoveFormat", "Cut", "Copy", "Paste"],
-                    ["Source", "-", "ShowBlocks", "-", "About"],
-                    ["Maximize"]]
+  config.toolbar = [
+                    ["Undo", "Redo"],
+                    ["Format", "-", "RemoveFormat"],
+                    ["HorizontalRule"], ["Link", "Unlink"],
+                    ["Cut", "Copy", "Paste"],
+                    ["Source", "-", "ShowBlocks", "-", "About"]
+                  ]
+
+  config.linkShowAdvancedTab = false
+  config.linkShowTargetTab = false
 
   true
 
