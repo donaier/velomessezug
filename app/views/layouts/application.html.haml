@@ -28,10 +28,7 @@
     -# Typekit
     = render 'layouts/typekit'
 
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    <!--[if (lt IE 9) & (!IEMobile)]>
-    = stylesheet_link_tag    'ie', media: 'all', 'data-turbolinks-track' => true
-    <![endif]-->
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
 
     = javascript_include_tag 'modernizr', 'data-turbolinks-track' => true
     = csrf_meta_tags
