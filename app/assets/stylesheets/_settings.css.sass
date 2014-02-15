@@ -1,0 +1,217 @@
+// COLOR VARIABLES
+$black:       #333
+$white:       #fff
+$blue:        blue
+$red:         red
+$green:       green
+
+//***********************************
+// FOUNDATION SETTINGS
+//
+$base-font-size: 100%
+$em-base: 16
+
+@function strip-unit($num)
+  @return $num / ($num * 0 + 1)
+
+// New Syntax, allows to optionally calculate on a different
+// base value to counter compounding effect of em's.
+//
+// Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported
+// em-calc(10 20 30px 40)
+// Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets
+// em-calc((10, 20, 30, 40px))
+// Optionally call with a different base (eg: 8px) to calculate em.
+// em-calc(16px 32px 48px, 8px)
+// If you require to comma separate your list
+// em-calc((16px, 32px, 48), 8px)
+
+@function convert-to-em($value, $base-value: $em-base)
+  $value: +strip-unit($value) / strip-unit($base-value) * 1em
+  @if $value == 0em
+    $value: 0
+  @return $value
+
+// Old emCalc mixin for fallbacks
+@function emCalc($pxWidth)
+  @return $pxWidth / $em-base * 1em
+
+// New em-calc mixin
+@function em-calc($values, $base-value: $em-base)
+  $max: length($values)
+
+  @if $max == 1
+    @return convert-to-em(nth($values, 1), $base-value)
+
+  $emValues: ()
+  @for $i from 1 through $max
+    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value))
+
+  @return $emValues
+
+@function emCalc($values)
+  @return em-calc($values)
+
+// Colors
+$primary-color: $red
+$secondary-color: $blue
+$alert-color: #c60f13
+$success-color: $green
+
+$body-bg: $white
+$body-font-color: $black
+
+// Font
+$body-font-family: Helvetica, Arial, sans-serif
+$body-font-weight: 400
+
+// Grid
+$row-width: +em-calc(1200px)
+$column-gutter: +em-calc(40px)
+$total-columns: 12
+
+// Block Grid
+$block-grid-elements: 12
+$block-grid-default-spacing: +em-calc(20px)
+
+// Border Radius Settings
+$global-radius: 0px
+
+// Inset shadow shiny edges and depressions.
+$shiny-edge-size: 0 1px 0
+$shiny-edge-color: rgba(#fff, .5)
+$shiny-edge-active-color: rgba(#000, .2)
+
+// Media Queries
+$small-screen: 768px
+$medium-screen: 1280px
+$large-screen: 1440px
+
+// Typo
+$header-font-family: Helvetica, Arial, sans-serif
+$header-font-weight: 400
+$header-font-color: $black
+$header-line-height: 1.4
+$header-top-margin: .2em
+$header-bottom-margin: .5em
+$header-text-rendering: optimizeLegibility
+
+/* Heading font sizes */
+$h1-font-size: +em-calc(44px)
+$h2-font-size: +em-calc(37px)
+$h3-font-size: +em-calc(27px)
+$h4-font-size: +em-calc(23px)
+$h5-font-size: +em-calc(18px)
+$h6-font-size: 1em
+
+/* Subheaders */
+$subheader-line-height: 1.4
+$subheader-font-color: lighten($header-font-color, 30%)
+$subheader-font-weight: 300
+$subheader-top-margin: .2em
+$subheader-bottom-margin: .5em
+
+/* <small> styling */
+$small-font-size: 60%
+$small-font-color: lighten($header-font-color, 30%)
+
+/* Paragraphs */
+$paragraph-font-family: inherit
+$paragraph-font-weight: normal
+$paragraph-font-size: 1em
+$paragraph-line-height: 1.6
+$paragraph-margin-bottom: +em-calc(20px)
+$paragraph-aside-font-size: +em-calc(14px)
+$paragraph-aside-line-height: 1.35
+$paragraph-aside-font-style: italic
+
+/* Anchors */
+$anchor-text-decoration: none
+$anchor-font-color: $primary-color
+$anchor-font-color-hover: darken($primary-color, 5%)
+
+
+// <hr> element
+$hr-border-width: 1px
+$hr-border-style: solid
+$hr-border-color: #ddd
+$hr-margin: +em-calc(20px)
+
+
+// Lists
+$list-style-position: outside
+$list-side-margin: +em-calc(20px)
+$list-nested-margin: +em-calc(20px)
+$definition-list-header-weight: bold
+$definition-list-header-margin-bottom: .3em
+$definition-list-margin-bottom: +em-calc(12px)
+
+// Forms
+$form-spacing: +em-calc(16px)
+
+/* Labels */
+$form-label-font-size: +em-calc(14px)
+$form-label-font-weight: 500
+$form-label-font-color: lighten(#000, 30%)
+$form-label-bottom-margin: +em-calc(3px)
+$input-font-family: inherit
+$input-font-color: rgba(0,0,0,0.75)
+$input-font-size: +em-calc(14px)
+$input-bg-color: #fff
+$input-focus-bg-color: darken(#fff, 2%)
+$input-border-color: darken(#fff, 20%)
+$input-focus-border-color: darken(#fff, 40%)
+$input-border-style: solid
+$input-border-width: 1px
+$input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1)
+$input-include-glowing-effect: true
+
+/* Fieldset border and spacing. */
+$fieldset-border-style: solid
+$fieldset-border-width: 1px
+$fieldset-border-color: #ddd
+$fieldset-padding: +em-calc(20px)
+$fieldset-margin: +em-calc(18px) 0
+
+/* Prefix and postfix input elements */
+$input-prefix-bg: darken(#fff, 5%)
+$input-prefix-border-color: darken(#fff, 20%)
+$input-prefix-border-size: 1px
+$input-prefix-border-type: solid
+$input-prefix-overflow: hidden
+$input-prefix-font-color: #333
+$input-prefix-font-color-alt: #fff
+
+// Button Variables
+
+/* Padding for buttons. */
+$button-tny: +em-calc(7px)
+$button-sml: +em-calc(9px)
+$button-med: +em-calc(12px)
+$button-lrg: +em-calc(16px)
+
+/* Display property. */
+$button-display: inline-block
+$button-margin-bottom: +em-calc(20px)
+
+/* Button text styles. */
+$button-font-family: inherit
+$button-font-color: #fff
+$button-font-color-alt: #333
+$button-font-med: +em-calc(16px)
+$button-font-tny: +em-calc(11px)
+$button-font-sml: +em-calc(13px)
+$button-font-lrg: +em-calc(20px)
+$button-font-weight: bold
+$button-font-align: center
+
+/* Various hover effects. */
+$button-function-factor: 10%
+
+/* Button border styles. */
+$button-border-width: 1px
+$button-border-style: solid
+$button-border-color: darken($primary-color, $button-function-factor)
+
+// TOPBAR VARIABLES
+$topbar-breakpoint: +em-calc($small-screen)

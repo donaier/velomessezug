@@ -1,0 +1,73 @@
+!!! 5
+/[if lt IE 7]
+  %html.no-js.lt-ie9.lt-ie8.lt-ie7{ lang: I18n.locale }
+/[if IE 7]
+  %html.no-js.lt-ie9.lt-ie8{ lang: I18n.locale }
+/[if IE 8]
+  %html.no-js.lt-ie9{ lang: I18n.locale }
+<!--[if gt IE 8]><!-->
+%html.no-js{ lang: I18n.locale }
+  <!--<![endif]-->
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
+    - if  content_for?(:head)
+      = yield(:head)
+    - else
+      %title 'Untitled'
+      %meta{ name: 'keywords', content: '' }
+      %meta{ name: 'description', content: '' }
+
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+
+    -# Favicons
+    = favicon_link_tag('favicons/129x129.png', rel: 'apple-touch-icon', type: 'image/png')
+    = favicon_link_tag('favicons/32x32.png', rel: 'icon', type: 'image/png')
+    = favicon_link_tag('favicons/32x32.ico')
+
+    -# Typekit
+    = render 'layouts/typekit'
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    = stylesheet_link_tag    'ie', media: 'all', 'data-turbolinks-track' => true
+    <![endif]-->
+
+    = javascript_include_tag 'modernizr', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    -# Google Analytics
+    - if Rails.env.production?
+      :javascript
+        ((b, o, i, l, e, r) ->
+          b.GoogleAnalyticsObject = l
+          b[l] or (b[l] = ->
+            (b[l].q = b[l].q or []).push arguments_
+          )
+          b[l].l = +new Date
+          e = o.createElement(i)
+          r = o.getElementsByTagName(i)[0]
+          e.src = "//www.google-analytics.com/analytics.js"
+          r.parentNode.insertBefore e, r
+        ) window, document, "script", "ga"
+        ga "create", "UA-XXXXX-X"
+        ga "send", "pageview"
+
+  %body{ class: body_class }
+    %header{role: "banner"}
+      = render 'partials/header'
+
+    %main#maincontent{role: "content"}
+      .row
+        = yield
+
+    %footer{role: "contentinfo"}
+      = render 'partials/footer'
+
+    -# Application JavaScripts
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    -# Selectivizr
+    <!--[if lte IE 8]>
+    = javascript_include_tag 'selectivizr'
+    <![endif]-->
