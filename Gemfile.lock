@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/donaier/kuhsaft.git
-  revision: 423c860a1b83d2e986064fa5d6586e8add778a5e
+  revision: 40a1b634a239b2a7d9dae5b7ec3a8fa1c633cb8c
   branch: master
   specs:
     kuhsaft (2.2.6)
@@ -152,8 +152,8 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.1.1)
-      railties (>= 3.1.0)
+    jquery-ui-rails (4.2.0)
+      railties (>= 3.2.16)
     json (1.8.1)
     launchy (2.4.2)
       addressable (~> 2.3)
@@ -198,7 +198,7 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
       arel
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     posix-spawn (0.3.8)
     pry (0.9.12.6)
       coderay (~> 1.0)

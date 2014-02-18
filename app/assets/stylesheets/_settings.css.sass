@@ -1,0 +1,162 @@
+// COLOR VARIABLES
+$black:       #000
+$white:       #fff
+
+//***********************************
+// FOUNDATION SETTINGS
+//
+$base-font-size: 18px !default
+$em-base: 18
+
+@function strip-unit($num)
+  @return $num / ($num * 0 + 1)
+
+@function convert-to-em($value)
+  $value: +strip-unit($value) / strip-unit($em-base) * 1em
+  @if $value == 0em
+    $value: 0
+  @return $value
+
+@function emCalc($pxWidth)
+  @return $pxWidth / $em-base * 1em
+
+@function emCalc($values...)
+  $max: length($values)
+
+  @if $max == 1
+    @return +convert-to-em(nth($values, 1))
+
+  $emValues: ()
+  @for $i from 1 through $max
+    $emValues: append($emValues, convert-to-em(nth($values, $i)))
+
+  @return $emValues
+
+// Colors
+$body-bg: $white
+$body-font-color: $black
+
+// Font
+$body-font-family: Arial, sans-serif
+$body-font-weight: normal
+
+// Grid
+$row-width: +emCalc(1200px) !default
+$column-gutter: +emCalc(40px) !default
+$total-columns: 12
+
+// Block Grid
+$block-grid-elements: 12
+$block-grid-default-spacing: +emCalc(40px)
+
+// Media Queries
+$small-screen: 769px
+$medium-screen: 1280px
+$large-screen: 1440px
+
+// Typo
+$header-font-family: Helvetica, Arial, sans-serif
+$header-font-weight: bold
+$header-font-color: $black
+$header-line-height: .925
+$header-top-margin: .2em
+$header-bottom-margin: .5em
+$header-text-rendering: optimizeLegibility
+
+/* Heading font sizes */
+$h1-font-size: +emCalc(60px)
+$h2-font-size: +emCalc(40px)
+$h3-font-size: +emCalc(28px)
+
+/* Subheaders */
+$subheader-line-height: 1.4
+$subheader-font-color: lighten($header-font-color, 30%)
+$subheader-font-weight: 300
+$subheader-top-margin: .2em
+$subheader-bottom-margin: .5em
+
+/* Paragraphs */
+$paragraph-font-family: inherit
+$paragraph-font-weight: normal
+$paragraph-font-size: +emCalc(18px)
+$paragraph-line-height: 1.4
+$paragraph-margin-bottom: +emCalc(10px)
+$paragraph-aside-font-size: +emCalc(14px)
+$paragraph-aside-line-height: 1.35
+$paragraph-aside-font-style: italic
+
+// <hr> element
+$hr-border-width: 1px
+$hr-border-style: solid
+$hr-border-color: #ddd
+$hr-margin: +emCalc(20px)
+
+// Lists
+$list-style-position: outside
+$list-side-margin: 0
+$list-nested-margin: +emCalc(20px)
+$definition-list-header-weight: 900
+$definition-list-header-margin-bottom: .3em
+$definition-list-margin-bottom: +emCalc(12px)
+
+// // Forms
+// $form-spacing: +emCalc(16px)
+
+// /* Labels */
+// $form-label-font-size: +emCalc(14px)
+// $form-label-font-weight: 500
+// $form-label-font-color: lighten(#000, 30%)
+// $form-label-bottom-margin: +emCalc(3px)
+// $input-font-family: inherit
+// $input-font-color: rgba(0,0,0,0.75)
+// $input-font-size: +emCalc(14px)
+// $input-bg-color: #fff
+// $input-focus-bg-color: darken(#fff, 2%)
+// $input-border-color: darken(#fff, 20%)
+// $input-focus-border-color: darken(#fff, 40%)
+// $input-border-style: solid
+// $input-border-width: 1px
+// $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1)
+// $input-include-glowing-effect: true
+
+// // Topbar
+
+// $topbar-bg: $white
+
+// /* Height and margin */
+// $topbar-height: 160px
+// $topbar-margin-bottom: 0
+
+// /* Controlling the styles for the title in the top bar */
+// $topbar-title-weight: 900
+// $topbar-title-font-size: +emCalc(17px)
+
+// /* Style the top bar dropdown elements */
+// $topbar-dropdown-bg: $black
+// $topbar-dropdown-link-color: #fff
+// $topbar-dropdown-link-bg: lighten($topbar-bg, 5%)
+// $topbar-dropdown-toggle-size: 5px
+// $topbar-dropdown-toggle-color: #fff
+// $topbar-dropdown-toggle-alpha: 0.5
+
+// /* Set the link colors and styles for top-level nav */
+// $topbar-link-color: $grey-dark
+// $topbar-link-color-hover: $black
+// $topbar-link-color-active: $black
+// $topbar-link-weight: 900
+// $topbar-link-font-size: +emCalc(13px)
+// $topbar-link-bg-hover: $white
+// $topbar-link-bg-active: darken($topbar-bg, 0%)
+
+// /* Top menu icon styles */
+// $topbar-menu-link-transform: uppercase
+// $topbar-menu-link-font-size: +emCalc(15px)
+// $topbar-menu-link-weight: 900
+// $topbar-menu-link-color: $black
+// $topbar-menu-icon-color: $white
+// $topbar-menu-link-color-toggled: $black
+// $topbar-menu-icon-color-toggled: $white
+
+// /* Transitions and breakpoint styles */
+// $topbar-transition-speed: 300ms
+// $topbar-breakpoint: $small-screen

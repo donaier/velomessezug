@@ -56,7 +56,8 @@
 
     %main#maincontent{role: "content"}
       .row
-        = yield
+        .columns
+          = yield
 
     %footer{role: "contentinfo"}
       = render 'partials/footer'

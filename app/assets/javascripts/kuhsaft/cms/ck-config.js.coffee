@@ -1,10 +1,10 @@
 CKEDITOR.editorConfig = (config) ->
   config.language = "de"
-  config.format_tags = "p;h1;h2;h3;h4;pre"
+  config.format_tags = "p;h1;h2;h3;pre"
   config.toolbar = [
                     ["Undo", "Redo"],
                     ["Format", "-", "RemoveFormat"],
-                    ["HorizontalRule"], ["Link", "Unlink"],
+                    ["HorizontalRule", 'NumberedList','BulletedList'], ["Link", "Unlink"],
                     ["Cut", "Copy", "Paste"],
                     ["Source", "-", "ShowBlocks", "-", "About"]
                   ]
