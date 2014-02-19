@@ -1,0 +1,18 @@
+de:
+  cms:
+    suppliers:
+      singular_name: Aussteller
+      plural_name: Aussteller
+      navigation_title: Aussteller
+
+  activerecord:
+    attributes:
+      supplier:
+        name: Name
+        link: Links
+        logo: Logo
+
+    models:
+      supplier:
+        one: Aussteller
+        other: Aussteller
