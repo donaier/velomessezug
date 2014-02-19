@@ -104,10 +104,13 @@ ActiveRecord::Schema.define(version: 20140219162532) do
   create_table "suppliers", force: true do |t|
     t.string   "name"
     t.string   "link"
-    t.string   "logo"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
 end

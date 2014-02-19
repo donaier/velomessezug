@@ -61,6 +61,8 @@ gem "bourbon"
 gem "kuhsaft", :git => 'git://github.com/donaier/kuhsaft.git', :branch => "master"
 gem "zurb-foundation"
 gem 'devise'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :development, :test do
   gem "pry-rails"

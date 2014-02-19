@@ -1,0 +1,11 @@
+= simple_form_for([:cms, resource], wrapper: :bootstrap) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :link
+    = f.file_field :logo
+    = f.hidden_field :position
+
+  .form-actions
+    = f.button :submit
