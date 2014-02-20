@@ -8,8 +8,8 @@
   .row
     - 4.times do
       - suppliers.each do |sup|
-        = link_to sup.link, target: '_blank' do
-          .supplier-item.columns.large-8.large-centered
+        .supplier-item.columns.large-8.large-centered
+          = link_to sup.link, target: '_blank' do
             .supplier-wrapper
               = image_tag(sup.logo(:thumb))
               .name= sup.name
