@@ -6,7 +6,7 @@ class Supplier < ActiveRecord::Base
   scope :ordered, -> { order('position ASC') }
 
   has_attached_file :logo, 
-    styles: { thumb: '200x200>' },
+    styles: { care: '200x200#', thumb: '45x45#' },
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename"
 

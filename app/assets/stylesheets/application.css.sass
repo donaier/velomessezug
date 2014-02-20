@@ -4,9 +4,6 @@
 // Foundation
 @import foundation
 
-// IE8 Foundation Grid Fix
-@import ie8
-
 // Bourbon imports
 @import bourbon
 
@@ -23,8 +20,8 @@
 // Project modules
 @import small/modules/*
 
-// IMPORT STYLESHEETS FOR LARGE VIEWPORT
-@media #{$small}
+// IMPORT STYLESHEETS FOR LARGE VIEWPORT */
+@media screen and (min-width: $small-screen)
   @import large/layout
   @import large/states
   @import large/modules/*

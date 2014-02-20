@@ -1,1 +1,15 @@
-%h3 Aussteller Listenansicht
+- suppliers = Supplier.all.ordered
+
+#supplier-list
+  .row
+    .columns
+      %h3 Aussteller Listenansicht mit Logo
+
+  .row
+    - 4.times do
+      - suppliers.each do |sup|
+        = link_to sup.link, target: '_blank' do
+          .supplier-item.columns.large-8.large-centered
+            .supplier-wrapper
+              = image_tag(sup.logo(:thumb))
+              .name= sup.name

@@ -1,0 +1,31 @@
+#supplier-grid
+  .supplier-wrapper
+    float: left
+    padding-bottom: 10px
+
+  .supplier-tile
+    position: relative
+    background: $black
+
+    img
+      max-width: 25%
+
+    .name
+      padding: 10px
+      display: inline
+      text-align: center
+      color: $white
+      word-break: break-all
+
+#supplier-list
+  .supplier-wrapper
+    transition: background, 0.4s
+    &:hover
+      background: $light-grey
+
+  .supplier-item
+    padding-bottom: 10px
+    .name
+      padding-left: 10px
+      display: inline
+

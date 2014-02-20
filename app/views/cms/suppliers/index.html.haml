@@ -19,7 +19,7 @@
       %tr
         %td= image_tag item.logo(:thumb)
         %td= item.name
-        %td= link_to item.link
+        %td= link_to item.link, item.link
         %td= link_to t("cms.edit"), edit_resource_path(item)
         %td
           =link_to resource_path(item), method: :delete, data: { confirm: t('cms.are_you_sure') }, class: 'btn btn-small btn-danger' do
