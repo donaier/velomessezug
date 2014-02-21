@@ -17,3 +17,5 @@
 
 /public/uploads
 /public/system
+
+*/**/.DS_Store

@@ -1,5 +1,10 @@
+.hide-for-small
+  = link_to '/' do
+    = image_tag('logo.png', class: 'logo')
 .row.container
   .columns.large-12
+    .hide-for-small
+      = image_tag('date.png', class: 'date')
     %nav#main-nav.top-bar{role: "navigation"}
       %ul.title-area
         %li.name
