@@ -7,7 +7,6 @@ module Kuhsaft
       :url => "/system/:attachment/:id/:style/:filename"
 
     validates :image, :presence => true
-    validates :image_size, :presence => true
 
     def collect_fulltext
       [super, caption].join(' ')
