@@ -7,8 +7,8 @@ class Supplier < ActiveRecord::Base
 
   has_attached_file :logo, 
     styles: { care: '200x200#', thumb: '45x45#' },
-    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-    :url => "/system/:attachment/:id/:style/:filename"
+    :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename",
+    :url => "/system/:class/:attachment/:id/:style/:filename"
 
   validates_presence_of :name, :link, :position
 

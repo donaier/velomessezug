@@ -3,8 +3,8 @@ module Kuhsaft
 
     has_attached_file :image,
       styles: { big: '1190x900', thumb: '120x100>' },
-      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-      :url => "/system/:attachment/:id/:style/:filename"
+      :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename",
+      :url => "/system/:class/:attachment/:id/:style/:filename"
 
     validates :image, :presence => true
 
