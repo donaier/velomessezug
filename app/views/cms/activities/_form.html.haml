@@ -1,0 +1,11 @@
+= simple_form_for([:cms, resource], wrapper: :bootstrap) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :description, input_html: { :class => 'ckeditor' }
+    = f.input :time
+    = f.input :date
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,15 @@
+- activities = Activity.ordered
+
+
+#activity-list
+  .row
+    .columns
+      %h3 Aktivitäten Listenansicht
+
+  .row
+    - 4.times do
+      - activity.each do |act|
+        .column.large-10.large-centered
+          %h3= act.title
+          %p= act.description
+
