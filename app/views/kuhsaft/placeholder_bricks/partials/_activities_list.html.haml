@@ -4,12 +4,15 @@
 #activity-list
   .row
     .columns
-      %h3 Aktivitäten Listenansicht
-
-  .row
-    - 4.times do
-      - activity.each do |act|
-        .column.large-10.large-centered
-          %h3= act.title
-          %p= act.description
+      - 4.times do
+        - activities.each_with_index do |act, index|
+          .row
+            .column.large-10.large-centered
+              .activity{ class: index.even? ? 'act-left' : 'act-right' }
+                .dateandtime
+                  = act.date
+                  = act.time
+                %h3= act.title
+                %p= act.description
+                %hr
 
