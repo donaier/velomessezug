@@ -6,7 +6,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item 1, 'Home', '/'
     Kuhsaft::Page.find_by_slug_de('home').children.published.each do |page|
       unless page.url.blank?
-        primary.item page.id, page.title, page.link, :highlights_on => %r(/#{page.title.downcase})
+        primary.item page.id, page.title, page.link
       end
     end
   end
