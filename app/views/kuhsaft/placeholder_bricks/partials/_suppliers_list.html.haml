@@ -2,14 +2,9 @@
 
 #supplier-list
   .row
-    .columns
-      %h3 Aussteller Listenansicht mit Logo
-
-  .row
-    - 4.times do
-      - suppliers.each do |sup|
-        .supplier-item.columns.large-8.large-centered
-          = link_to sup.link, target: '_blank' do
-            .supplier-wrapper
-              = image_tag(sup.logo(:thumb))
-              .name= sup.name
+    - suppliers.each do |sup|
+      .supplier-item.columns.large-8.large-centered
+        = link_to sup.link, target: '_blank' do
+          .supplier-wrapper
+            = image_tag(sup.logo(:thumb))
+            .name= sup.name

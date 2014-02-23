@@ -1,10 +1,11 @@
-.hide-for-small
+.hide-for-small.logo
   = link_to '/' do
-    = image_tag('logo.png', class: 'logo')
+    = image_tag('logo.png')
 .row.container
   .columns.large-12
-    .hide-for-small
-      = image_tag('date.png', class: 'date')
+    .hide-for-small.date
+      = link_to kuhsaft.page_path(I18n.locale, Kuhsaft::Page.find_by_slug_de('kontakt').slug) do
+        = image_tag('date.png', class: 'date')
     %nav#main-nav.top-bar{role: "navigation"}
       %ul.title-area
         %li.name

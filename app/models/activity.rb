@@ -8,5 +8,5 @@ class Activity < ActiveRecord::Base
   validates_presence_of :title
 
   editable_attributes :title, :description, :time, :date
-  index_attributes :title, :description, :time, :date
+  index_attributes :title, :description, :time
 end
