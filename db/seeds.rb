@@ -31,7 +31,6 @@ suppliers.update_attributes(
     description_de: "",
     published: 1,
     url_de: "de/aussteller",
-    ancestry: home.id,
     page_title_de: "Velomesse Zug - Aussteller"
   )
 
@@ -44,7 +43,6 @@ activities.update_attributes(
     description_de: "",
     published: 1,
     url_de: "de/aktivitaeten",
-    ancestry: home.id,
     page_title_de: "Velomesse Zug - Aktivitäten"
   )
 
@@ -57,6 +55,5 @@ contact.update_attributes(
     description_de: "",
     published: 1,
     url_de: "de/kontakt",
-    ancestry: home.id,
     page_title_de: "Velomesse Zug - Kontakt/Anfahrt"
   )
