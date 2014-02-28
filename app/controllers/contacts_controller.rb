@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
                       #{params[:contact][:message]}"
 
       Mail.deliver do
-        to      'donat.baier@gmail.com'
+        to      'info@shop-velo.ch'
         from    'kontaktformular@velomessezug.ch'
         subject mail_subject
         body    mail_content
