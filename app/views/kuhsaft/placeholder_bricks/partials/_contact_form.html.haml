@@ -1,0 +1,15 @@
+#contact-form
+  .row
+    .columns.large-10.large-centered
+      %h2 Kontakt
+      %hr
+      map
+      %hr
+  .row
+    .columns.large-8.large-centered
+      = simple_form_for :contact, url: contacts_create_path do |f|
+        = f.input :name, placeholder: 'Name', label: false
+        = f.input :email, as: :email, placeholder: 'E-Mail', label: false
+        = f.input :message, as: :text, placeholder: 'Nachricht', label: false
+
+        = f.submit
