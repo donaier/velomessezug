@@ -1,10 +1,9 @@
 - suppliers = Supplier.all.ordered
 
 #supplier-list
-  .row
-    - suppliers.each do |sup|
+  - suppliers.each do |sup|
+    .row
       .supplier-item.columns.large-8.large-centered
         = link_to sup.link, target: '_blank' do
           .supplier-wrapper
-            = image_tag(sup.logo(:thumb))
             .name= sup.name
