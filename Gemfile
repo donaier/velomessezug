@@ -60,7 +60,7 @@ gem "shoestrap", "1.2.0"
 gem "selectivizr-rails"
 gem "modernizr-rails"
 gem "bourbon"
-gem "kuhsaft", :git => 'git://github.com/donaier/kuhsaft.git', :branch => "master"
+gem "kuhsaft", :git => 'git://github.com/donaier/kuhsaft.git', :branch => "velomessezug"
 gem "zurb-foundation"
 gem 'devise'
 gem 'paperclip'
