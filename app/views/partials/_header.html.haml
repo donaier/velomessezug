@@ -5,9 +5,8 @@
   .columns
     .hide-for-small
       = link_to 'http://www.shop-velo.ch', class: 'shop-logo' do
-        = image_tag 'logo-shop-velo.png'
-      = link_to kuhsaft.page_path(I18n.locale, Kuhsaft::Page.find_by_slug_de('kontakt').slug), class: 'date' do
-        = image_tag('date.png', class: 'date')
+        = image_tag 'logo-shop-velo.jpg'
+      %img.date
     %nav#main-nav.top-bar{role: "navigation"}
       %ul.title-area
         %li.name
